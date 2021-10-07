@@ -6,9 +6,11 @@ function DisplayImages( props ) {
             <section className='bookContainer'>
                 <div className='images'>
                     {props.books.map(getImages => {
-                        return(
-                            <img src={getImages.book_image}  alt={getImages.description} /> 
-                        )
+                        if (props.userBook === getImages.title) {
+                            return(
+                                <img src={getImages.book_image}  alt={getImages.description} /> 
+                            )
+                        }
                     })}
                 </div>
             </section>

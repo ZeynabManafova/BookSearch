@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Form from './Form.js';
+import Footer from './Footer.js';
 import DisplayImages from './DisplayImages.js';
 import './App.css';
 
@@ -8,6 +9,7 @@ import './App.css';
 function App() {
   // declaring useState here:
   const [bookResults, setBookResults ] = useState([]);
+  const [userBook, setUserBook] = useState('')
 
   // useEffect to run api
   useEffect (() => {
@@ -29,23 +31,27 @@ function App() {
 
     // empty dependency array 
   }, []);
-
-  console.log(bookResults)
-
+  //function that handles the book selection from the user, this function will pass down to the form component
   const getBook = (e, bookSelection) => {
     e.preventDefault()
-    console.log("the book is", bookSelection)
+    setUserBook(bookSelection) // sets the userBook state to the user selection
   }
 
   return (
     <div className='App'>
-      <h1>Choose your Book!</h1>
+      <h1>Let's Read </h1>
+      
       <Form 
         books={bookResults}
-        bookSelection={getBook}
+        getBook={getBook} //send the function down as a prop called getBook
       />
+
       <DisplayImages 
-      books={bookResults}/>
+        books={bookResults}
+        userBook={userBook}
+      />
+
+      <Footer />
     </div>
   )
 }
@@ -53,3 +59,5 @@ function App() {
 export default App;
 
 
+
+// Didn't have enough time to finish this project. Still trying to learn React. 

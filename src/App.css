@@ -11,6 +11,9 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
 
+/* importing google-fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@1,300&display=swap');
 
 .App {
   text-align: center;
@@ -59,6 +62,7 @@ html {
 }
 
 body {
+  background-color: papayawhip;
   margin: 0;
   padding: 0;
 }
@@ -66,8 +70,14 @@ body {
 img {
   display: block;
   max-width: 100%;
-  display: none;
 }
+
+a {
+  list-style: none;
+  text-decoration: none;
+  color: black;
+}
+
 
 
 /* DisplayImages component  */
@@ -75,14 +85,37 @@ img {
   border: 3px solid red;
 }
 
-button {
-  background-color: #ff0;
-  width: 20%;
+h1{
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
+button {
+  width: 20%;
+  background-color: #FFE5CC;
+  border-radius: 2rem;
+  padding: 1%;
+  font-weight: bold;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
 
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.selectMenu {
+  width: 70%;
+  padding: 2%;
+  margin: 4% 0;
+  box-sizing: border-box;
+  border-radius: 5rem;
+  background-color: #FFE5CC;
+}
 
+footer {
+  font-family: 'Open Sans Condensed', sans-serif;
+}
 
 
 

@@ -6,16 +6,14 @@ function Form (props) {
     // creating variable for useState 
 
     const [userChoice, setUserChoice ] = useState('placeholder');
-    // const bookResults = result.data.results.books
-    
-
+    // changes the state
     const handleUserChoice = (e) => {
         setUserChoice(e.target.value)
     }
 
     return (
-        <form onSubmit={(e) => props.getBook(e,userChoice)}>
-            <select
+        <form onSubmit={(e) => props.getBook(e, userChoice)}>
+            <select className='selectMenu'
                 id=''
                 name=''
                 value={userChoice}
@@ -23,14 +21,15 @@ function Form (props) {
             >
                 {/* i have 15 options (book names for the dropdown) not sure how to put them all in to dropdown without making 15 <option> in the form */}
                 {/* option for placeholder dropdown */}
-                <option value='placeholder' disabled>Choose a Book</option>
+                <option className='placeHolder' value='placeholder' disabled>Choose a Book</option>
                 {/* using .map to display book titles to the page */}
                 {props.books.map(bookTitles => {
                     return (
-                    <option value={bookTitles.title}>{bookTitles.title}</option>
-                )})}
+                        <option value={bookTitles.title}>{bookTitles.title}</option>
+                    )
+                })}
             </select>
-                <button type='submit'>Search</button>
+            <button type='submit'>Search</button>
         </form>
         
     );
