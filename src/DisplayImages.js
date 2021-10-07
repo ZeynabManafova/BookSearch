@@ -5,6 +5,7 @@ function DisplayImages( props ) {
             <section className='bookContainer'>
                 <>
                     <div className='images'>
+                    {/* eslint-disable-next-line */}
                         {props.books.map(getImages => {
                             if (props.userBook === getImages.title) {
                                 return(
