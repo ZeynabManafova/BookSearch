@@ -60,4 +60,4 @@ export default App;
 
 
 
-// Didn't have enough time to finish this project. Still trying to learn React. 
+// Sorry for the messy code. 

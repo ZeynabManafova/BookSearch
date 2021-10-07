@@ -65,6 +65,7 @@ body {
   background-color: papayawhip;
   margin: 0;
   padding: 0;
+  max-width: 100%;
 }
 
 img {
@@ -79,10 +80,10 @@ a {
 }
 
 
-
-/* DisplayImages component  */
+/*  */
 .bookContainer  img { 
   border: 3px solid red;
+  margin: 5% 40%;
 }
 
 h1{
@@ -118,41 +119,23 @@ footer {
 }
 
 
+/* media queries  */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 
 @media (max-width: 768px) {
-  .results {
+  .selectMenu
+  button {
     width: 80%;
   }
 }
 
-@media (max-width: 585px) {
-  .closeBtn {
-    right: 17px;
-  }
-}
 
 @media (max-width: 470px) {
-  .closeBtn {
+  .selectMenu
+  button  {
     right: 10px;
   }
-} */
+  .bookContainer img {
+    margin: 3rem;
+  }
+} 
+

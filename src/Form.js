@@ -1,16 +1,12 @@
 import {useState} from 'react';
 
-
-
 function Form (props) {
     // creating variable for useState 
-
     const [userChoice, setUserChoice ] = useState('placeholder');
     // changes the state
     const handleUserChoice = (e) => {
         setUserChoice(e.target.value)
     }
-
     return (
         <form onSubmit={(e) => props.getBook(e, userChoice)}>
             <select className='selectMenu'
@@ -19,7 +15,6 @@ function Form (props) {
                 value={userChoice}
                 onChange={handleUserChoice}
             >
-                {/* i have 15 options (book names for the dropdown) not sure how to put them all in to dropdown without making 15 <option> in the form */}
                 {/* option for placeholder dropdown */}
                 <option className='placeHolder' value='placeholder' disabled>Choose a Book</option>
                 {/* using .map to display book titles to the page */}
@@ -31,9 +26,7 @@ function Form (props) {
             </select>
             <button type='submit'>Search</button>
         </form>
-        
     );
-
 }
 
 export default Form;
