@@ -54,9 +54,8 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 /* general */
 
 html {
+  font-size: 125%;
   line-height: 1.15;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -64,15 +63,22 @@ body {
   padding: 0;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+  display: none;
+}
+
 
 /* DisplayImages component  */
-.bookContainer  img {
-  width: 35%;
-  display: flex;
-  justify-content: space-between;
+.bookContainer  img { 
   border: 3px solid red;
 }
 
+button {
+  background-color: #ff0;
+  width: 20%;
+}
 
 
 

@@ -8,7 +8,8 @@ import './App.css';
 function App() {
   // declaring useState here:
   const [bookResults, setBookResults ] = useState([]);
-  // useEffect to run api first
+
+  // useEffect to run api
   useEffect (() => {
     
     // api key is here: (not sure if it is good practice to declare apikey here)
@@ -25,18 +26,26 @@ function App() {
     }).then((result) => {
       setBookResults(result.data.results.books)
     });
-      // empty dependency array 
-  }, []);
 
+    // empty dependency array 
+  }, []);
 
   console.log(bookResults)
 
+  const getBook = (e, bookSelection) => {
+    e.preventDefault()
+    console.log("the book is", bookSelection)
+  }
 
   return (
     <div className='App'>
       <h1>Choose your Book!</h1>
-      <Form books={bookResults}/>
-      <DisplayImages books={bookResults}/>
+      <Form 
+        books={bookResults}
+        bookSelection={getBook}
+      />
+      <DisplayImages 
+      books={bookResults}/>
     </div>
   )
 }

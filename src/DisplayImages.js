@@ -2,13 +2,17 @@
 function DisplayImages( props ) {
 
     return (
-        <section className='bookContainer'>
-            {props.books.map(getImages => {
-                return(
-                    <img src={getImages.book_image}  alt={getImages.description} /> 
-                )
-            })}
-        </section>
+        <>
+            <section className='bookContainer'>
+                <div className='images'>
+                    {props.books.map(getImages => {
+                        return(
+                            <img src={getImages.book_image}  alt={getImages.description} /> 
+                        )
+                    })}
+                </div>
+            </section>
+        </>
     );
 }
 
