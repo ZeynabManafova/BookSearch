@@ -18,9 +18,9 @@ function Form (props) {
                 {/* option for placeholder dropdown */}
                 <option className='placeHolder' value='placeholder' disabled>Choose a Book</option>
                 {/* using .map to display book titles to the page */}
-                {props.books.map(bookTitles => {
+                {props.books.map(book => {
                     return (
-                        <option value={bookTitles.title}>{bookTitles.title}</option>
+                        <option value={book.title} key={book.title}>{book.title}</option>
                     )
                 })}
             </select>

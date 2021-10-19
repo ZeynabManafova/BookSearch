@@ -5,14 +5,9 @@ function DisplayImages( props ) {
             <section className='bookContainer'>
                 <>
                     <div className='images'>
-                    {/* eslint-disable-next-line */}
-                        {props.books.map(getImages => {
-                            if (props.userBook === getImages.title) {
-                                return(
-                                    <img src={getImages.book_image}  alt={getImages.description} /> 
-                                )
-                            }
-                        })}
+                        {props.books.filter(image => props.userBook === image.title)
+                            .map(getImages => <img src={getImages.book_image}  alt={getImages.description} key={getImages.title} /> 
+                        )}
                     </div>
                 </>
             </section>
@@ -20,5 +15,7 @@ function DisplayImages( props ) {
 };
 
 export default DisplayImages;
+
+
 
 

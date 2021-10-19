@@ -10,6 +10,8 @@ function App() {
   // declaring useState here:
   const [bookResults, setBookResults ] = useState([]);
   const [userBook, setUserBook] = useState('')
+  const [isError, setIsError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   // useEffect to run api
   useEffect (() => {
@@ -27,6 +29,9 @@ function App() {
       },
     }).then((result) => {
       setBookResults(result.data.results.books)
+    }).catch((error) => {
+      setErrorMessage('Books failed to load');
+      setIsError(true);
     });
 
     // empty dependency array 
@@ -45,11 +50,16 @@ function App() {
         books={bookResults}
         getBook={getBook} //send the function down as a prop called getBook
       />
-
-      <DisplayImages 
-        books={bookResults}
-        userBook={userBook}
-      />
+      {
+        isError ? (
+          <p>{errorMessage}</p>
+          ): (
+            <DisplayImages 
+              books={bookResults}
+              userBook={userBook}
+            />
+          )
+      }
 
       <Footer />
     </div>
